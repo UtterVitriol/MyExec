@@ -77,9 +77,6 @@ int exec()
 	}*/
 
 
-	
-
-
 	iResult = GetEnvironmentVariableA(envName, binaryName, 255);
 	if (iResult <= 0)
 	{
@@ -136,12 +133,7 @@ int exec()
 	std::string mycmdl = binaryName;
 	mycmdl.append(" /c dir");
 
-	const char* beans = "C:\\Users\\uttervitriol\\source\\repos\\MyExec\\x64\\Release\\meme.exe";
-
-
-	
-
-	if (CreateProcessA(NULL, (LPSTR)beans, NULL, NULL, TRUE, CREATE_NEW_CONSOLE | EXTENDED_STARTUPINFO_PRESENT, NULL, NULL, &sInfo.StartupInfo, &pInfo))
+	if (CreateProcessA(NULL, (LPSTR)mycmdl.c_str(), NULL, NULL, TRUE, CREATE_NEW_CONSOLE | EXTENDED_STARTUPINFO_PRESENT, NULL, NULL, &sInfo.StartupInfo, &pInfo))
 	{
 		char buff[4096] = { 0 };
 		DWORD dwRead = 0;
