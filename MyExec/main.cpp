@@ -3,5 +3,7 @@
 
 int main()
 {
-	exec();
+	DWORD dwPID = GetProcId(L"explorer.exe");
+
+	exec(dwPID, (char*)"dir");
 }
